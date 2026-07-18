@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+<div style="max-width: 350px; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: Arial, sans-serif; background-color: #fcfcfc;">
+    <h3 style="margin-top: 0; color: #333;">Contact Us</h3>
+
+    <form th:action="@{/submit-form}" method="POST">
+        <div style="margin-bottom: 12px;">
+            <label style="display: block; font-size: 14px; font-weight: bold; margin-bottom: 5px; color: #555;">Name:</label>
+            <input type="text" name="name" requred placeholder="Apnar nam" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" >
+        </div>
+
+        <div style="margin-bottom: 12px;">
+            <label style="display: block; font-size: 14px; font-weight: bold; margin-bottom: 5px; color: #555;">Email:</label>
+            <input type="email" name="email" placeholder="Apnar email" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; font-size: 14px; font-weight: bold; margin-bottom: 5px; color: #555;">Message:</label>
+            <textarea name="message" rows="3" placeholder="Ki jante chan likhun..." required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"></textarea>
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 15px; font-weight: bold; cursor: pointer;">Send Message</button>
+    </form>
+</div>
+</body>
+</html>

@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Momin Islam - portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="icon" type="image/x-icon" href="/images/Momin favicon-modified.png">
 </head>
 <body>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress"><div id="scroll-progress-bar"></div></div>
+
 <header>
-    <div class="nav">
+    <div class="nav" id="mainNav">
         <div class="logo">
             <img class="nav-logo" src="/images/Screenshot 2025-12-27 183010.png" alt="MI Logo">
             <p>Momin Islam</p>
@@ -25,44 +32,98 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span class="theme-toggle-track">
+                <i class="fa-solid fa-sun theme-icon theme-icon-sun"></i>
+                <i class="fa-solid fa-moon theme-icon theme-icon-moon"></i>
+                <span class="theme-toggle-thumb"></span>
+            </span>
+        </button>
     </div>
 </header>
 
 <section id="home" class="hero">
-    <h2>Hi, I'm <b style="color: rgb(92, 244, 27);">Momin Islam</b></h2>
-    <p>Full Stack Web Developer</p>
-    <button>Get In Touch</button>
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+
+    <div class="hero-content">
+        <p class="hero-eyebrow anim-pop" data-delay="0">👋 Welcome to my portfolio</p>
+        <h2 class="anim-pop" data-delay="150">Hi, I'm <b style="color: rgb(92, 244, 27);">Momin Islam</b></h2>
+        <p class="hero-typed anim-pop" data-delay="300">
+            <span id="typed-text"></span><span class="typed-cursor">|</span>
+        </p>
+        <button class="anim-pop" data-delay="450">Get In Touch</button>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
 </section>
 
 <section class="about" id="about">
     <div class="about-img">
-        <h2>About Me</h2>
-        <img src="/images/Whisk_d2bf2dc618d785eb7a149cbbd1be9b23eg.jpeg" alt="Profile Photo">
+        <h2 class="reveal">About Me</h2>
+        <img class="reveal reveal-scale" src="/images/Whisk_d2bf2dc618d785eb7a149cbbd1be9b23eg.jpeg" alt="Profile Photo">
     </div>
     <div class="about-desc">
-        <h3>Passionate Web Developer</h3>
-        <p>I build clean, responsive, and user-friendly websites. With a strong foundation in modern web technologies, I love turning complex problems into simple designs.
-            HTML5 CSS3 JavaScript React Node.js</p>
+        <h3 class="reveal">From Desktop Apps to 3D Graphics — I Build It All</h3>
+        <p class="reveal">
+            I'm a developer who enjoys turning ideas into working software across very different corners of tech.
+            I've built desktop systems like a <strong>University Management System</strong> and a
+            <strong>Food Billing System</strong> using Java, JavaFX, and MySQL, a full <strong>e-commerce platform
+            (LifeWear)</strong> in PHP, and even a <strong>3D Cineplex</strong> simulation using C++ with OpenGL/GLUT
+            and OpenCV. Whether it's a database-driven desktop app, a web platform, or real-time graphics, I like
+            figuring out how the pieces fit together and shipping something that actually works.
+        </p>
+        <div class="tech-marquee reveal">
+            <div class="tech-track">
+                <span><i class="fa-brands fa-java"></i> Java</span>
+                <span><i class="fa-solid fa-diagram-project"></i> JavaFX</span>
+                <span><i class="fa-solid fa-database"></i> MySQL</span>
+                <span><i class="fa-brands fa-php"></i> PHP</span>
+                <span><i class="fa-solid fa-code"></i> C++</span>
+                <span><i class="fa-solid fa-cube"></i> OpenGL</span>
+                <span><i class="fa-solid fa-camera"></i> OpenCV</span>
+                <span><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span><i class="fa-brands fa-react"></i> React</span>
+                <!-- duplicate set for seamless loop -->
+                <span><i class="fa-brands fa-java"></i> Java</span>
+                <span><i class="fa-solid fa-diagram-project"></i> JavaFX</span>
+                <span><i class="fa-solid fa-database"></i> MySQL</span>
+                <span><i class="fa-brands fa-php"></i> PHP</span>
+                <span><i class="fa-solid fa-code"></i> C++</span>
+                <span><i class="fa-solid fa-cube"></i> OpenGL</span>
+                <span><i class="fa-solid fa-camera"></i> OpenCV</span>
+                <span><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span><i class="fa-brands fa-react"></i> React</span>
+            </div>
+        </div>
     </div>
 </section>
 
 <section class="services" id="services">
-    <h2>Services</h2>
+    <h2 class="reveal">Services</h2>
 
     <div class="services-container">
-        <div class="service-box">
+        <div class="service-box reveal" data-delay="0">
             <i class="fa-solid fa-code"></i>
             <h3>Web Development</h3>
             <p>Creating high-performance websites with modern frameworks.</p>
         </div>
 
-        <div class="service-box">
+        <div class="service-box reveal" data-delay="120">
             <i class="fa-solid fa-paintbrush"></i>
             <h3>UI/UX Design</h3>
             <p>Designing intuitive interfaces for the best user experience.</p>
         </div>
 
-        <div class="service-box">
+        <div class="service-box reveal" data-delay="240">
             <i class="fa-solid fa-mobile-screen-button"></i>
             <h3>Responsive Design</h3>
             <p>Ensuring your site looks great on all devices and screen sizes.</p>
@@ -72,10 +133,10 @@
 
 <!-- portfolio -->
 <section class="portfolio" id="portfolio">
-    <h2>My Projects</h2>
+    <h2 class="reveal">My Projects</h2>
 
     <div class="portfolio-container">
-        <div class="portfolio-box">
+        <div class="portfolio-box reveal tilt-card" data-delay="0">
             <img src="/images/ums.png" alt="Project One">
             <div class="portfolio-layer">
                 <h3>University Management System</h3>
@@ -87,7 +148,7 @@
             </div>
         </div>
 
-        <div class="portfolio-box">
+        <div class="portfolio-box reveal tilt-card" data-delay="100">
             <img src="/images/foodBillingSystem.png" alt="Project Two">
             <div class="portfolio-layer">
                 <h3>Food Billing System</h3>
@@ -99,7 +160,7 @@
             </div>
         </div>
 
-        <div class="portfolio-box">
+        <div class="portfolio-box reveal tilt-card" data-delay="200">
             <img src="images/cineplex.png" alt="Project Three">
             <div class="portfolio-layer">
                 <h3>3d Cineplex</h3>
@@ -111,7 +172,7 @@
             </div>
         </div>
 
-        <div class="portfolio-box">
+        <div class="portfolio-box reveal tilt-card" data-delay="300">
             <img src="images/lifewear.png" alt="Project Four">
             <div class="portfolio-layer">
                 <h3>LifeWear</h3>
@@ -179,5 +240,10 @@
         </div>
     </div>
 </footer>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
 </body>
 </html>
